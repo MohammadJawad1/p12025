@@ -36,7 +36,7 @@ std::string FileUtils::findFileExtension(const std::string& filename)
 
     size_t pos= filename.find_last_of('.');
 
-    if (pos == std::string::npos)
+    if (pos == std::string::npos || pos == filename.length() - 1)
     {
         return "";
     }
