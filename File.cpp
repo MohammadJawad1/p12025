@@ -16,20 +16,15 @@ File::File(const std::string& filename, bool isReadable, bool isWritable) : read
     }
     else
     {
-        std::string ext = FileUtils::findFileExtension(filename);
+        size_t pos = filename.find_last_of('.');
         {
-            if (ext.empty())
+            if (pos == std::string::npos)
             {
-
-                if(filename.back() == '.')
-                {
-                    filename_ = filename + "txt";
-                }
-
-                else
-                {
-                    filename_ = filename+ ".txt";
-                }
+                filename_ = filename + ".txt";
+            }
+            else if (pos == filename.length() - 1)
+            {
+                filename_ = filename + ".txt";
             }
             else
             {
