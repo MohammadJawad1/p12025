@@ -38,7 +38,7 @@ std::string FileUtils::findFileExtension(const std::string& filename)
         return "";
     }
 
-    return filename.substr(pos);
+    return filename.substr(pos + 1);
 }
 
 bool FileUtils::hasWhitespaces(const std::string& filename)

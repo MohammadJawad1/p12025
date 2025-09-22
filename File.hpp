@@ -1,16 +1,15 @@
-#ifndef FILE_HPP
-#define FILE_HPP
+#pragma once
 #include "FileUtils.hpp"
 
 class File
 {
 private:
 
-std::string filename_;
-bool readable_;
-bool writeable_;
+    std::string filename_;
+    bool readable_;
+    bool writable_;
 
-//timestamp last_modified_timestamp_;
+    timestamp last_modified_timestamp_;
 
 public:
 /**
@@ -20,7 +19,7 @@ public:
 * Sets the File's filename_ to "New_Text_Document.txt"
 * Sets all boolean members to true.
 */
-File();
+    File();
 /**
 * Constructs a new File object.
 *
@@ -38,13 +37,13 @@ File();
 * 4. Otherwise, the parameter filename is used as is
 * Note: A filename like `.env` or `.log` IS allowed (ie. filenames containing only the extension)!
 */
-File();
+    File(const std::string& filename, bool isReadable = true, bool isWritable = true);
 
 /**
 * Retrieves the current readable permission as a boolean.
 * @return The value stored in `readable_`
 */
-bool isReadable();
+    bool isReadable() const;
 
 /**
 * Sets the readable permission of the File object.
@@ -54,14 +53,14 @@ bool isReadable();
 * 1. The readble member is set to the value of the parameter
 * 2. (more to come in a later task)
 */
-void setReadable(const bool& new_permission);
+    void setReadable(bool new_permission);
 
 
 /**
 * Retrieves the current writable permission as a boolean.
 * @return The value stored in `writable_`
 */
-bool isWritable();
+    bool isWritable() const;
 
 /**
 * Sets the writable permission of the File object.
@@ -71,12 +70,12 @@ bool isWritable();
 * 1. The writable member is set to the value of the parameter
 * 2. (more to come in a later task)
 */
-void setWritable(const bool& new_permission);
+    void setWritable(bool new_permission);
 
 /**
 * Retrieves the current filename as a string.
 */
-std::string getFilename();
+    std::string getFilename() const;
 /**
 * Attempts to set a new filename for the File object.
 * The operation FAILS if:
@@ -90,7 +89,11 @@ std::string getFilename();
 * 1. If possible, the filename variable is set to that of the parameter
 * 2. If the filename was modified, the last modified attribute is updated to the current system time
 */
-bool setFilename();
-};
+    bool setFilename(const std::string& newFilename);
 
-#endif
+    /**
+* Retrieves the last modified timestamp of the File object.
+* @return The timestamp stored within `last_modified_timestamp_`
+*/
+    timestamp getLastModified() const;
+};
