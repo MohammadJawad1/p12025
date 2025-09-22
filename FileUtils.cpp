@@ -40,7 +40,15 @@ std::string FileUtils::findFileExtension(const std::string& filename)
     }
     return filename.substr(pos);
 }
-
+/**
+* Checks if a given filename contains any whitespace characters.
+*
+* A whitespace character is any character matching the STL documentation in the link below.
+*
+* @param filename A const reference to a string representing the filename to check for spaces.
+* @return true if the filename contains one or more whitespace characters, false otherwise.
+* @see https://en.cppreference.com/w/cpp/string/byte/isspace.html
+*/
 bool FileUtils::hasWhitespaces(const std::string& filename)
 {
     for(unsigned char ch : filename)

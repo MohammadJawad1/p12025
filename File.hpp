@@ -22,6 +22,9 @@ public:
 * @post
 * Sets the File's filename_ to "New_Text_Document.txt"
 * Sets all boolean members to true.
+* @post
+* <the other post conditions / default conditions>
+* NEW: `last_modified_timestamp_` is set to the current system time
 */
     File();
 /**
@@ -55,7 +58,7 @@ public:
 * @param new_permission A const reference to a boolean for the new readable permission
 * @post
 * 1. The readble member is set to the value of the parameter
-* 2. (more to come in a later task)
+* 2. The last modified attribute is updated to the current system time
 */
     void setReadable(bool new_permission);
 
@@ -72,7 +75,7 @@ public:
 * @param new_permission A const reference to a boolean for the new writable permission
 * @post
 * 1. The writable member is set to the value of the parameter
-* 2. (more to come in a later task)
+* 2. The last modified attribute is updated to the current system time
 */
     void setWritable(bool new_permission);
 
