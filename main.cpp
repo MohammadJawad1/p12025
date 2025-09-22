@@ -17,15 +17,13 @@ int main() {
     std::cout << "Test 4: " << FileUtils::hasWhitespaces("") << "\n";    
 
     File f1;  // default
-    std::cout << "Filename: " << f1.getFilename() 
-              << ", Last Modified: " << FileUtils::timestampToString(f1.getLastModified()) << "\n";
+    std::cout << "Filename: " << f1.getFilename()  << ", Last Modified: " << FileUtils::timestampToString(f1.getLastModified()) << "\n";
 
     f1.setReadable(false);
     f1.setWritable(false);
 
-    f1.setFilename("example.txt");
-    std::cout << "Filename: " << f1.getFilename() 
-              << ", Last Modified: " << FileUtils::timestampToString(f1.getLastModified()) << "\n";
+    f1.setFilename("example.txt"); 
+    std::cout << "Filename: " << f1.getFilename() << ", Last Modified: " << FileUtils::timestampToString(f1.getLastModified()) << "\n";
 
     return 0;
 
