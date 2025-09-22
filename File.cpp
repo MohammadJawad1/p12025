@@ -1,3 +1,7 @@
+//Mohammad Jawad
+//9/22/25
+//File implementation for getters constructors and such
+
 #include "File.hpp"
 
 File::File() : filename_("New_Text_Document.txt"), readable_(true), writable_(true), last_modified_timestamp_(cr::system_clock::now()){}

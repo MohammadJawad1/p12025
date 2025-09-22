@@ -1,3 +1,6 @@
+//Mohammad Jawad
+//9/22/25
+//File utils implementation
 #include "FileUtils.hpp"
 
 std::string FileUtils::timestampToString(timestamp time_point)
@@ -33,7 +36,11 @@ std::string FileUtils::findFileExtension(const std::string& filename)
 
     size_t pos= filename.find_last_of('.');
 
-    if (pos == std::string::npos || pos == filename.length()-1)
+    if (pos == std::string::npos)
+    {
+        return "";
+    }
+    if (pos == filename.length()-1)
     {
         return "";
     }
