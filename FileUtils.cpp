@@ -40,12 +40,8 @@ std::string FileUtils::findFileExtension(const std::string& filename)
     {
         return "";
     }
-    if (pos == filename.length()-1)
-    {
-        return "";
-    }
 
-    return filename.substr(pos + 1);
+    return filename.substr(pos);
 }
 
 bool FileUtils::hasWhitespaces(const std::string& filename)
