@@ -95,12 +95,22 @@ bool File::isWritable() const
 {
     return writable_;
 }
-
+/**
+* Sets the writable permission of the File object.
+*
+* @param new_permission A const reference to a boolean for the new writable permission
+* @post
+* 1. The writable member is set to the value of the parameter
+* 2. The last modified attribute is updated to the current system time
+*/
 void File::setWritable(bool new_permission)
 {
     writable_ = new_permission;
     last_modified_timestamp_ = cr::system_clock::now();
 }
+/**
+* Retrieves the current filename as a string.
+*/
 std::string File::getFilename() const
 {
     return filename_;
