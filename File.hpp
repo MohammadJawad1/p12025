@@ -44,7 +44,7 @@ public:
 * 4. Otherwise, the parameter filename is used as is
 * Note: A filename like `.env` or `.log` IS allowed (ie. filenames containing only the extension)!
 */
-    File(const std::string& filename, bool isReadable = true, bool isWritable = true);
+    File(const std::string& filename, bool isReadable, bool isWritable);
 
 /**
 * Retrieves the current readable permission as a boolean.
